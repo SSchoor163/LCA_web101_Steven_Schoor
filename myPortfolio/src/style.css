@@ -1,0 +1,17 @@
+body{
+    font-size: 16px;
+}
+article {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    line-height: 20px;
+   background-color: blue;
+    color: #fff;
+    text-align: justify;
+    width: 500px;
+    }
+header{
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif';
+}
