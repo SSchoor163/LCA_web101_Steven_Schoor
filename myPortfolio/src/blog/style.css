@@ -1,0 +1,39 @@
+.outter{
+    width: 250px;
+    height: 250px;
+    text-align: center;
+   
+}
+.inner {
+    width: 200px;
+    height: 200px;
+    border: 2px dashed gold; 
+    margin: 15px 15px -15px 20px;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 25px;
+    
+    
+}
+div>a{
+    color: darkgray;
+    text-decoration: none;
+}
+
+
+.outter>p{
+    font-size: 20px;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+}
+#blogPost{
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    
+    width: 1000px;
+    height: 600px;
+    margin: 10% 80%
+}
+h1{
+    text-align: center;
+}
