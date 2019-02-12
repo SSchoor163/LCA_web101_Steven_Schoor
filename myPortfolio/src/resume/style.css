@@ -1,0 +1,57 @@
+h1 {
+    text-align: center;
+}
+h2{
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration-line: underline;
+}
+main{
+    display: inline-block;
+    
+    width: 1000px;
+    margin-left: 20%;
+    margin-right: 20%;
+    line-height: 22px;
+}
+div {
+    display: flex;
+  
+}
+section{
+    border-radius: 18px;
+    border: 2px solid black;
+    padding: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 5px;
+    background-color: rgba(245, 245, 220, 0.623);
+}
+ #profile{
+width: 650px;
+height: 200px;
+
+}
+#profile li{
+    list-style: none;
+}
+#contact{
+    width: 300px;
+    height: 200px;
+    text-align: center;
+}
+
+.mid{
+    width:333px;
+    height: 300px;
+}
+#workhistory{
+    display: block;
+    padding: 15px;
+    font-family: 'Times New Roman', Times, serif
+}
+span{
+    font-weight: bold;
+}
+dt{
+    font-weight: bold;
+    
+}
