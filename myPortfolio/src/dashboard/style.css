@@ -3,21 +3,55 @@
 
 /* Small and up (Landscape Phones) */
 @media (min-width: 576px) {
+    main > div {
+        position: absolute;
+        left: 21%;
+        top: 0px;
+        z-index: -1;
+    }
+    nav {
+        position: absolute;
+        left:0px;
+        top: 0px;
+        z-index: 2;
+        background-color: green;
+        width: 20%;
+        height: 600px;
+        display: flex;
+        flex-direction: column;
+       }
+    nav > a {
+        color: black;
+        margin-left: 5px; 
+        margin-right: 5px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 1.5em;
+        font-weight: bolder;
+        text-align: center;
+    }
+    #welcome{
+        z-index: 1;
+    }
+    #welBtn{
+        color: yellow;
+    }
     div {
-    width: 300px;
-    height: 500px;
+    width: 80%;
+    height: 600px;
     border: 1px black solid;
     background-color: blue;
     text-align: center;
+
     }
     h1{
         color: yellow
     }
     h2{
-        color: green
+        color: black
     }
     
-    form{
+    #gridForm{
         grid-column: 1/ span 4;
         background-color: gray;
         font-size: 35px;
@@ -75,6 +109,7 @@
         grid-template-rows: auto auto auto auto auto auto auto;
         justify-content: space-evenly;
         grid-gap: 5%;
+        margin: auto;
      }
      .day{
          font-size: 20px;
@@ -84,33 +119,154 @@
          width: 100px;
          height: 50px;
      }
+     
      #flexCalc{
         width: 250px;
         height: 360px;
-        display: flexbox;
-        flex-flow: ltr;
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap; 
         border: 3px black solid;
         padding-top: 10px;
-        background-color: silver       
+        background-color: silver;
+        margin: auto;
+      
     }
-    .flexCalButton{
+    .calFlexButton{
         border-radius: 20px;
         margin: 10px;
         font-size: 15px;
         border-color: black;
-        height: 70%;
-        width: 70%;
+        height: 12%;
+        width: 17%;
+    }
+    #flexEnter{
+        width: 40%;
+        font-weight: bolder;
+    }
+    #flexForm{
+        background-color: gray;
+        font-size: 35px;
+        text-align: center;
+        padding-top: 10px;
+        margin-left: 5%;
+        margin-right: 5%;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        letter-spacing: 5px;
+        width: 7em
+    }
+    #clock > form>output{
+        font-size: 70px;
+        border-radius: 15px;
+        background-color: white;
     }
 }
 
 /* Medium and up (Tablets) */
 @media (min-width: 768px) {
-
+    nav {
+        height: 400px;
+        margin-top: 10%;
+        margin-bottom: 10%;
+    }
+    div{
+        height: 900px;
+        
+    }
+    #calculator{
+        width: 500px;
+        height: 720px;
+        grid-template-columns: 125px 125px 125px 125px;
+        grid-template-rows: 120px 120px 120px 120px 120px 120px; 
+        margin-right: 5%;    
+    }
+    .calButton{
+        border-radius: 45px;
+        font-size: 50px;
+        }
+    #gridForm{
+        margin-right: 5%;
+        font-size: 90px;
+    }
+    #flexCalc{
+        width: 500px;
+        height: 720px;
+        padding-top: 20px;
+        
+      
+    }
+    
+    .calFlexButton{
+        border-radius: 45px;
+        font-size: 45px;
+        }
+    #flexEnter{
+        width: 40%;
+    }
+    #flexForm{
+        font-size: 90px;
+        padding-top: 10px;
+        margin-bottom: 5%;
+        }
+    h1{
+        font-size: 60px;
+    }
+    h2{
+        font-size: 45px;
+    }
+    
+    #clock{
+        font-size: 90px;
+    }
 }
 
 /* Large and up (Desktops) */
 @media (min-width: 992px) {
-
+    #calculator{
+        width: 500px;
+        height: 720px;
+        grid-template-columns: 125px 125px 125px 125px;
+        grid-template-rows: 120px 120px 120px 120px 120px 120px; 
+        margin-right: 5%;    
+    }
+    .calButton{
+        border-radius: 45px;
+        font-size: 50px;
+        }
+    #gridForm{
+        margin-right: 5%;
+        font-size: 90px;
+    }
+    #flexCalc{
+        width: 500px;
+        height: 720px;
+        padding-top: 20px;
+        margin-left: 18%;
+        margin-right: 8%;   
+      
+    }
+    
+    .calFlexButton{
+        border-radius: 45px;
+        font-size: 45px;
+        }
+    #flexEnter{
+        width: 40%;
+    }
+    #flexForm{
+        font-size: 90px;
+        padding-top: 10px;
+        margin-bottom: 5%;
+        }
+    h1{
+        font-size: 60px;
+    }
+    h2{
+        font-size: 45px;
+    }
+    #clock{
+        font-size: 45px;
+    }
 }
 
 /* Extra Large and up (Wide Screen Desktops) */

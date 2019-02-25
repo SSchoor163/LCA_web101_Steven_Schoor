@@ -5,28 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <link rel="stylesheet" href="./style.css">
+    
     <title>Dashboard</title>
 </head>
-<body>
+<body onload="display('welcome', 'welBtn')">
     <header>
-        <nav><button id="return">Return</button>
-
+        <nav>
+            <a onclick="display('welcome', 'welBtn')" id="welBtn">Welcome</a> <a onclick="display('gridCalc', 'grdBtn')" id="grdBtn">Grid Calculator</a><a onclick="display('flexCalcCont', 'flxBtn')" id="flxBtn">Flex Calculator</a><a onclick="display('clock', 'tmBtn')" id="tmBtn">Time</a><a onclick="display('tooDo', 'tdBtn')" id="tdBtn">Too Do List</a><a onclick="display('cal', 'calBtn')" id="calBtn">Calandar</a>
         </nav>
     </header>
-    
-    <main>
+        <main >
          
 
-        <div><h1>Welcome Micheal Jones!</h1><h2>How can I help you today?</h2></div>
-        <div ><h1>Calculator</h1><div id="calculator"><form><output>####</output></form>
+        <div id="welcome"><h1>Welcome Micheal Jones!</h1><h2>How can I help you today?</h2></div>
+        <div id="gridCalc" ><h1>Calculator</h1>
+            <div id="calculator"><form id="gridForm"><output>####</output></form>
             <button class="calButton">1</button><button class="calButton">2</button><button class="calButton">3</button><button class="calButton">(</button><button class="calButton">4</button><button class="calButton">5</button><button class="calButton">6</button><button class="calButton">)</button><button class="calButton">7</button><button class="calButton">8</button><button class="calButton">9</button><button class="calButton">.</button><button class="calButton">0</button><button class="calButton">del</button><button class="calButton">+</button><button class="calButton">-</button><button class="calButton" id="enter">Enter</button><button class="calButton">*</button><button class="calButton">/</button>
         </div></div>
-        <div><h1>Too do List</h1>
+        <div id="tooDo"><h1>Too do List</h1>
         <section class="todo"><button class="checkbox"></button>Take out trash</section>
         <section class="todo"><button class="checkbox"></button>Play with Cats</section>
         <section class="todo"><button class="checkbox"></button>Take over the world</section>
         </div>
-        <div><h1>Calandar</h1>
+        <div id="cal"><h1>Calandar</h1>
             <div id="calandar">
                 <section class="day"> Feb 13</section>
                 <section class="day"> Feb 14</section>
@@ -34,14 +35,28 @@
                 <section class="day"> Feb 16</section>
             </div>
         </div>
-        <div><h1>Clock</h1><form><output>##:##:##</output></form></div>
-        <div><h1>Flexbox Calculator</h1>
+        <div id="clock"><h1>Clock</h1><form><output >##:##:##</output></form></div>
+        <div id="flexCalcCont"><h1>Flexbox Calculator</h1>
             <div id="flexCalc">
-                <form><output>####</output></form>
-            <button class="calFlexButton">1</button><button class="calFlexButton">2</button><button class="calFlexButton">3</button><button class="calFlexButton">(</button><button class="calFlexButton">4</button><button class="calFlexButton">5</button><button class="calFlexButton">6</button><button class="calFlexButton">)</button><button class="calFlexButton">7</button><button class="calFlexButton">8</button><button class="calFlexButton">9</button><button class="calFlexButton">.</button><button class="calFlexButton">0</button><button class="calFlexButton">del</button><button class="calFlexButton">+</button><button class="calFlexButton">-</button><button class="calFlexButton" id="enter">Enter</button><button class="calFlexButton">*</button><button class="calFlexButton">/</button>
+                <form id="flexForm"><output>####</output></form>
+            <button class="calFlexButton">1</button><button class="calFlexButton">2</button><button class="calFlexButton">3</button><button class="calFlexButton">(</button><button class="calFlexButton">4</button><button class="calFlexButton">5</button><button class="calFlexButton">6</button><button class="calFlexButton">)</button><button class="calFlexButton">7</button><button class="calFlexButton">8</button><button class="calFlexButton">9</button><button class="calFlexButton">.</button><button class="calFlexButton">0</button><button class="calFlexButton">del</button><button class="calFlexButton">+</button><button class="calFlexButton">-</button><button class="calFlexButton" id="flexEnter">Enter</button><button class="calFlexButton">*</button><button class="calFlexButton">/</button>
             </div>
 
         </div>
     </main>
+    <script >
+        var current = 0;
+        var curBtn = 0;
+            function display(dis, btn){
+            if(current != dis){
+                document.getElementById(dis).style.zIndex="1";
+            document.getElementById(btn).style.color= "yellow"
+            if(current != 0) {document.getElementById(current).style.zIndex="-1";}
+            if(curBtn != 0) {document.getElementById(curBtn).style.color="black";}
+            current = dis; 
+            curBtn = btn
+             }
+            }
+        </script>
 </body>
 </html>
