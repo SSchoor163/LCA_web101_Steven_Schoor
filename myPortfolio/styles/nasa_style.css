@@ -5,7 +5,7 @@ body{
     margin: 0 auto;
  }
 header{
-    background-image: url("./background.jpg");
+    background-image: url("../images/nasa_background.jpg");
    background-size: cover; 
     height: 450px;
     font-family: 'Anton', sans-serif;
