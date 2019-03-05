@@ -100,6 +100,11 @@ nav>div {
 }
 /*#endregion*/
 /*#region third*/
+#thirdContainer{
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+}
 #third{
     border: 1px black solid;
     display: inline-grid;
@@ -108,8 +113,7 @@ nav>div {
     column-gap: 50px;
     row-gap: 50px;
     width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
+
 }
 #third>div{
     border: 6px #5fb3bd solid;
