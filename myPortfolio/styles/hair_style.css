@@ -188,16 +188,18 @@ nav>div {
     margin-bottom: 250px;
    
 }
-#g3>img{
-    width:190px;
-    height: 238px;
-}
+
 #g3>p{
     font-weight: bold;
     font-size: 16px;
-    line-height: 40px;
+    line-height: 30px;
     padding-right: 20px;
     padding-left: 30px;
+    width: 220px;
+}
+#g3>img{
+    width:190px; 
+    height: 238px;
 }
 #g2, #g3{
     background-color: #519194;
