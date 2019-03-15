@@ -1,21 +1,30 @@
 /*#region* nav*/
-    nav{
+header{
+    width: auto;
     background-color: #4c8f96;
+}   
+nav{
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
-    width: 100%;
+    width: 1000px;
     height: 130px;
+    margin-top: 41px;
 }
 nav>div {
+    display: block;
+    width: 250px;
+    max-width: 250px;
     height: 100px;
-    width: 220px;
     color: white;
     background-color: #222841;
-    font-size: 50px;
-    margin-left: 140px;
-    margin-right: 140px;
+    font-size: 40px;
     margin-top: 40px;
-    padding-top: 20px;
-    }
+    padding-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: 'Cinzel', serif;
+    font-weight: bold;    }
     nav>a{
         background-color: #222841;
         height: 30px;
@@ -23,14 +32,11 @@ nav>div {
         padding-right: 15px;
         margin-top: 50px;
         margin-left: 25px;
-        margin-right: 25x;
         font-size: 25px;
         color: white;
         border-radius: 10px;
     }
-    #last{
-        margin-right: 200px;
-    }
+   
     #home{
         background-color: #335f64;
     }
@@ -42,7 +48,7 @@ nav>div {
 #first{
     border: 2px #4c8f96 solid;
     display: flex;
-    width: 1300px;
+    width: 1000px;
     margin: auto;
     margin-top: 60px;
 }
@@ -53,7 +59,7 @@ nav>div {
     margin-top: 5px;
 }
 #first>p{
-    font-size: 60px;
+    font-size: 40px;
     color: #222841;
     margin-left: 30px;
     margin-top: 100px;
@@ -65,16 +71,17 @@ nav>div {
 #second{
     margin: auto;
     height: 470px;
-    width: 1350px;
+    width: 1000px;
     display: flex;
     flex-wrap: wrap;
-    margin-right: 190px;
+    margin-right: auto;
     margin-top: 60px;
+    margin-left: auto;
     
 }
 #second>img{
-    width:300px;
-    height: 200px;
+    width: 210px;
+    height: 170px;
     border: 6px #4c8f96 solid;
     margin-left: -5px;
     margin-right: 25px;
@@ -85,7 +92,7 @@ nav>div {
     width: 200px;
     height: 250px;
     margin-left: -7px;
-    margin-right: 140px;
+    margin-right: 53px;
     
 }
 #second>div>h1{
@@ -99,6 +106,7 @@ nav>div {
   
 }
 /*#endregion*/
+
 /*#region third*/
 #thirdContainer{
     margin-left: auto;
@@ -106,10 +114,9 @@ nav>div {
     width: 1000px;
 }
 #third{
-    border: 1px black solid;
-    display: inline-grid;
+       display: inline-grid;
     grid-template-columns: auto auto;
-    grid-template-rows: auto auto;
+    grid-template-rows: 300px 300px;
     column-gap: 50px;
     row-gap: 50px;
     width: 1000px;
@@ -156,23 +163,30 @@ nav>div {
     margin-top: 4px;
 }
 #g1>p{
-    font-size: 18px;
-    line-height: 35px;
+    font-size: 15px;
+    line-height: 25px;
 }
 #g2{
-    width: 460px;
-    font-size: 18px;
-    line-height: 35px;
+    width: 440px;
+    font-size: 14px;
+    line-height: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 #g2>p{
     float: right;
     font-size: 40px;
 }
+#g2>h2{
+    margin-bottom: 60px;
+}
 
 #g3{
     display: flex;
     width: 460px;
+    height:238px;
     margin-bottom: 250px;
+   
 }
 #g3>img{
     width:190px;
@@ -180,8 +194,10 @@ nav>div {
 }
 #g3>p{
     font-weight: bold;
-    font-size: 25px;
+    font-size: 16px;
     line-height: 40px;
+    padding-right: 20px;
+    padding-left: 30px;
 }
 #g2, #g3{
     background-color: #519194;
@@ -189,3 +205,40 @@ nav>div {
 }
 
 /*#endregion third*/
+
+/*#region footer*/
+footer{
+    width: auto;
+    height: 120px;
+    background-color: #4c8f96;
+   margin-top: 35px;
+}
+footer>div>p{
+    padding-top: 40px;
+    font-size: 12px;
+    margin-left: 200px;
+    color:white;
+}
+#container{
+   width: 1000px; 
+   display: flex;
+   margin-left: auto;
+}
+#images{
+    height: 60px;
+    width: 155px;
+    background-color: #387a82;
+    padding-left: 22px;
+    padding-top: 22px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: 150px;
+    margin-top: 15px;
+}
+footer>div>div>img{
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+/*#endregion footer */
