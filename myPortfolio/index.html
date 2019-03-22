@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./styles/animate.css">
     <title>My Portfolio</title>   
 </head>
-    <body>
+    <body onload="animatePortrait('imgCen', 'imgTop', 'imgBot', 'imgSide')">
         <header>
             <img src="https://lubbockcodingacademy.com/assets/images/lubbock-logo.png" class="logo" alt="Lubbock coding academy logo">
             <nav>
@@ -23,10 +23,10 @@
             <h1 class="animated shake">Steven S. Schoor</h1>
                 <div id="central">
                     <a href="./src/portfolio.html">
-                        <img id="imgSide" class="animated rotateIn" src="./images/animation1.png">
-                        <img id="imgBot" class="animated slideInUp" src="./images/animation2.png">
-                        <img id="imgTop" class="animated slideInDown" src="./images/animation3.png">
-                        <img id="imgCen" class="animated fadeIn" src="./images/animation4.png">
+                        <img id="imgSide"  src="./images/animation1.png">
+                        <img id="imgBot"  src="./images/animation2_2.png">
+                        <img id="imgTop"  src="./images/animation3.png">
+                        <img id="imgCen"  src="./images/animation4.png">
                     </a>
                 </div>
             <h2>Student of Web Development</h2>
@@ -45,6 +45,32 @@
                 <button id="reset" type="reset">Reset</button>
             </form>
         </main>
+        <script>
+            function removeaAnima(bot){
+                        document.getElementById(bot).classList.remove('animated');
+                        document.getElementById(bot).classList.remove("fadeIn");
+                        }
+            function animatePortrait(cen, top, bot, sid){
+                document.getElementById(cen).style.visibility="visible";
+                document.getElementById(cen).classList.add("animated");
+                document.getElementById(cen).classList.add("fadeIn");
+                document.getElementById(top).style.visibility='visible';
+                document.getElementById(bot).style.visibility='visible';
+                document.getElementById(top).classList.add("animated");
+                document.getElementById(top).classList.add("slideInDown");
+                document.getElementById(bot).classList.add("animated");
+                document.getElementById(bot).classList.add("slideInUp");
+                document.getElementById(sid).style.visibility='visible';
+                document.getElementById(sid).classList.add("animated");
+                document.getElementById(sid).classList.add("rotateIn");
+                document.getElementById(bot).classList.remove("slideInUp");
+               
+                
+            }
+        </script>
+        <!-- class="animated rotateIn"
+        class="animated slideInUp" 
+    class="animated slideInDown"-->
     </body>
 
 </html>
