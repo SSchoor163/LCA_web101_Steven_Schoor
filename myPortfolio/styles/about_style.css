@@ -32,9 +32,15 @@ small{
 .name{
     text-align: center
 }
+#tab{
+    width: 700px;
+}
 td{
     width: 230px;
     display: inline-block;
+}
+tr{
+    width: 700px;
 }
 h1{
     text-align: center
