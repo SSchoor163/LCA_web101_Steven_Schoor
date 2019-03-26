@@ -3,7 +3,9 @@ sequence of events
 ask which marker player 1 will choose
 display turn player 1
 player 1 choose a square
+ensure square is not already used
 displayer player 2
+ensure square is not already used
 player 2 choose a square
 check victory conditions
 repeat until victory conditions are met.
@@ -11,58 +13,123 @@ when victory conditions are met display player number and ask if they would like
 displayer a Y and a N
 if yes clear board and start over 
 */
-var space1 = null;
-var space2 = null;
-var space3 = null;
-var space4 = null;
-var space5 = null;
-var space6 = null;
-var space7 = null;
-var space8 = null;
-var space9 = null;
-var player1 = null;
-var player2 = null;
+var space = ["", "", "" , "" , "" , "", "", "", "", "" ];
+var turn;
+var player1 = 'true';
+var player1Marker;
+var player2 = 'false';
+var player2Marker;
+var currentPlayer;
+var victory;
+
 
 function setBoard(){
-   space1 = document.getElementById('one').innerHTML="";
-   space2 = document.getElementById('two').innerHTML="";
-   space3 = document.getElementById('three').innerHTML="";
-   space4 = document.getElementById('four').innerHTML="";
-   space5 = document.getElementById('five').innerHTML="";
-   space6 = document.getElementById('six').innerHTML="";
-   space7 = document.getElementById('seven').innerHTML="";
-   space8 = document.getElementById('eight').innerHTML="";
-   space9 = document.getElementById('nine').innerHTML="";
+   turn = 0;
+   victory = false;
+   var gridID;
+   for(var x=1;  x < 10; x++){
+       gridID = "grid"+ x;
+        document.getElementById(gridID).innerHTML="";
+}  
    display('Player 1 Choose a marker!');
-
 }
 
 function display(text){
     document.getElementById('display').innerHTML= text;
 }
 
+
+
 function playerMarkerChoice(choice){
-    
-    if(choice = 'X')
+    var x = choice;
+    if(x == "X")
         {
-            player1 = 'X';
-            player2 = 'O';
+            player1Marker = "X";
+            player2Marker = "O";
         }
     else{
-        player1 = 'O';
-        player2 = 'X';
+        player1Marker = "O";
+        player2Marker = "X";
     }
     document.getElementById('mark1').style.visibility='hidden';
     document.getElementById('mark2').style.visibility='hidden';
     display('Game Start. Player 1 choose a square!')
 }
-
-function playerGridSelect(player){
-    display(player+'choose a square!');
-
+function currentGrid(choice){
+    gridSpace = document.getElementById(choice).innerHTML;
+    if(player1Marker == undefined )
+        {
+            display('Player 1 must choose a Marker first.')
+            return
+        }
+    else if(gridSpace == "X" || gridSpace == "O")
+    {
+        display('That square is already choosen. Choose again!');
+    }
+    else if(victory==true){
+        return
+    }
+    else
+    {
+        gridSpace = document.getElementById(choice);
+        if (player1 == 'true' ){
+            gridSpace.innerHTML=player1Marker;
+            space[gridSpace.getAttribute("title")] = player1Marker;
+            
+            turn += 1;
+            if(victoryConditions() == true) return;
+            player1='flase';
+            player2='true';
+            display('Player 2 choose a square!')
+            
+        }
+        else{
+            gridSpace.innerHTML=player2Marker;
+            space[gridSpace.getAttribute("title")] = player2Marker;
+            
+            turn += 1;
+            if(victoryConditions() == true) return;
+            player1='true';
+            player2='false';
+            display('Player 1 choose a square!')
+            
+        }
+    }
 }
 
 function victoryConditions(){
-
+    if (turn == 9){
+        display('Game is a tie!')
+        return true;
+    }
+    if(player1 == 'true'){
+        if(     (space[1]==player1Marker&&space[2]==player1Marker&&space[3]==player1Marker) ||
+                (space[1]==player1Marker&&space[4]==player1Marker&&space[7]==player1Marker) || 
+                (space[1]==player1Marker&&space[5]==player1Marker&&space[9]==player1Marker) || 
+                (space[2]==player1Marker&&space[5]==player1Marker&&space[8]==player1Marker) || 
+                (space[3]==player1Marker&&space[6]==player1Marker&&space[9]==player1Marker) ||
+                (space[3]==player1Marker&&space[5]==player1Marker&&space[7]==player1Marker) ||
+                (space[4]==player1Marker&&space[5]==player1Marker&&space[6]==player1Marker) ||
+                (space[7]==player1Marker&&space[8]==player1Marker&&space[9]==player1Marker)) 
+    {
+        display('Player 1 win');
+        return true;
+    }
+}
+else{
+    if(     (space[1]==player2Marker&&space[2]==player2Marker&&space[3]==player2Marker) ||
+            (space[1]==player2Marker&&space[4]==player2Marker&&space[7]==player2Marker) || 
+            (space[1]==player2Marker&&space[5]==player2Marker&&space[9]==player2Marker) || 
+            (space[2]==player2Marker&&space[5]==player2Marker&&space[8]==player2Marker) || 
+            (space[3]==player2Marker&&space[6]==player2Marker&&space[9]==player2Marker) ||
+            (space[3]==player2Marker&&space[5]==player2Marker&&space[7]==player2Marker) ||
+            (space[4]==player2Marker&&space[5]==player2Marker&&space[6]==player2Marker) ||
+            (space[7]==player2Marker&&space[8]==player2Marker&&space[9]==player2Marker))
+        {  
+            display('You win Player 2. Would you like to play again');
+            return true;
+        }
+        
+    }
 }
 
