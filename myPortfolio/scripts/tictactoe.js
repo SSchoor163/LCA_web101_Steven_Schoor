@@ -19,14 +19,20 @@ var player1 = 'true';
 var player1Marker;
 var player2 = 'false';
 var player2Marker;
-var currentPlayer;
 var victory;
 
 
 function setBoard(){
    turn = 0;
+   player1 = 'true';
+   player1Marker = 'p';
+   player2 = 'false';
+   player2Marker = 'p';
    victory = false;
-   var gridID;
+   document.getElementById('mark1').style.visibility='visible';
+    document.getElementById('mark2').style.visibility='visible';
+   var gridID = null;
+   space = ["", "", "" , "" , "" , "", "", "", "", "" ];
    for(var x=1;  x < 10; x++){
        gridID = "grid"+ x;
         document.getElementById(gridID).innerHTML="";
@@ -112,7 +118,7 @@ function victoryConditions(){
                 (space[4]==player1Marker&&space[5]==player1Marker&&space[6]==player1Marker) ||
                 (space[7]==player1Marker&&space[8]==player1Marker&&space[9]==player1Marker)) 
     {
-        display('Player 1 win');
+        display('You win Player 1. Would you like to play again?');
         return true;
     }
 }
@@ -126,7 +132,7 @@ else{
             (space[4]==player2Marker&&space[5]==player2Marker&&space[6]==player2Marker) ||
             (space[7]==player2Marker&&space[8]==player2Marker&&space[9]==player2Marker))
         {  
-            display('You win Player 2. Would you like to play again');
+            display('You win Player 2. Would you like to play again?');
             return true;
         }
         
