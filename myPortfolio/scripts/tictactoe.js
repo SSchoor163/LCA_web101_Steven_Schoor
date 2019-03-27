@@ -25,7 +25,7 @@ var victory;
 function setBoard(){
    turn = 0;
    player1 = 'true';
-   player1Marker = 'p';
+   player1Marker = undefined;
    player2 = 'false';
    player2Marker = 'p';
    victory = false;
@@ -81,8 +81,6 @@ function currentGrid(choice){
         if (player1 == 'true' ){
             gridSpace.innerHTML=player1Marker;
             space[gridSpace.getAttribute("title")] = player1Marker;
-            
-            turn += 1;
             if(victoryConditions() == true) return;
             player1='flase';
             player2='true';
@@ -92,8 +90,6 @@ function currentGrid(choice){
         else{
             gridSpace.innerHTML=player2Marker;
             space[gridSpace.getAttribute("title")] = player2Marker;
-            
-            turn += 1;
             if(victoryConditions() == true) return;
             player1='true';
             player2='false';
@@ -122,8 +118,8 @@ function victoryConditions(){
         return true;
     }
 }
-else{
-    if(     (space[1]==player2Marker&&space[2]==player2Marker&&space[3]==player2Marker) ||
+    else{
+        if(     (space[1]==player2Marker&&space[2]==player2Marker&&space[3]==player2Marker) ||
             (space[1]==player2Marker&&space[4]==player2Marker&&space[7]==player2Marker) || 
             (space[1]==player2Marker&&space[5]==player2Marker&&space[9]==player2Marker) || 
             (space[2]==player2Marker&&space[5]==player2Marker&&space[8]==player2Marker) || 
@@ -131,11 +127,12 @@ else{
             (space[3]==player2Marker&&space[5]==player2Marker&&space[7]==player2Marker) ||
             (space[4]==player2Marker&&space[5]==player2Marker&&space[6]==player2Marker) ||
             (space[7]==player2Marker&&space[8]==player2Marker&&space[9]==player2Marker))
-        {  
+            {  
             display('You win Player 2. Would you like to play again?');
             return true;
-        }
+            }
         
-    }
+        }
+    turn += 1;
 }
 
