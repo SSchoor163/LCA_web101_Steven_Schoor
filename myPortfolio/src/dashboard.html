@@ -25,9 +25,12 @@
             <button class="calButton">1</button><button class="calButton">2</button><button class="calButton">3</button><button class="calButton">(</button><button class="calButton">4</button><button class="calButton">5</button><button class="calButton">6</button><button class="calButton">)</button><button class="calButton">7</button><button class="calButton">8</button><button class="calButton">9</button><button class="calButton">.</button><button class="calButton">0</button><button class="calButton">del</button><button class="calButton">+</button><button class="calButton">-</button><button class="calButton" id="enter">Enter</button><button class="calButton">*</button><button class="calButton">/</button>
         </div></div>
         <div id="tooDo"><h1>Too do List</h1>
-        <section class="todo"><button class="checkbox"></button><p>Take out trash</p></section>
-        <section class="todo"><button class="checkbox"></button><p>play with Cats</p></section>
-        <section class="todo"><button class="checkbox"></button><p>Take over the world</p></section>
+            <section class="todo">
+                <button class="checkbox"></button>
+                <form>
+                    <input type="text" placeholder="New item..">
+                </form><p>New Item...</p></section>
+        
         </div>
         <div id="cal"><h1>Calandar</h1>
             <div id="calandar">
@@ -45,19 +48,7 @@
 
         </div>
     </main>
-    <script >
-        var current = 0;
-        var curBtn = 0;
-            function display(dis, btn){
-            if(current != dis){
-                document.getElementById(dis).style.zIndex="1";
-            document.getElementById(btn).style.color= "yellow"
-            if(current != 0) {document.getElementById(current).style.zIndex="-1";}
-            if(curBtn != 0) {document.getElementById(curBtn).style.color="black";}
-            current = dis; 
-            curBtn = btn
-             }
-            }
-        </script>
+    <script src="../scripts/jquery-3.3.1.js"></script>
+    <script src="../scripts/dashboard.js "></script>
 </body>
 </html>
