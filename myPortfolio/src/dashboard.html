@@ -8,7 +8,8 @@
     
     <title>Dashboard</title>
 </head>
-<body onload="display('welcome', 'welBtn')">
+<body>
+<!-- <body onload="display('welcome', 'welBtn')"> -->
     <header>
         <nav>
             <a onclick="display('welcome', 'welBtn')" id="welBtn">Welcome</a> <a onclick="display('gridCalc', 'grdBtn')" id="grdBtn">Grid Calculator</a><a onclick="display('flexCalcCont', 'flxBtn')" id="flxBtn">Flex Calculator</a><a onclick="display('clock', 'tmBtn')" id="tmBtn">Time</a><a onclick="display('tooDo', 'tdBtn')" id="tdBtn">Too Do List</a><a onclick="display('cal', 'calBtn')" id="calBtn">Calandar</a>
@@ -19,17 +20,19 @@
 
         <div id="welcome"><h1>Welcome Micheal Jones!</h1>
             <img src="../images/580b57fcd9996e24bc43c4c4.png" alt="thumbs up emoji">
-            <h2>How can I help you today?</h2></div>
+            <h2>How can I help you today?</h2>
+        </div>
         <div id="gridCalc" ><h1>Calculator</h1>
             <div id="calculator"><form id="gridForm"><output>####</output></form>
             <button class="calButton">1</button><button class="calButton">2</button><button class="calButton">3</button><button class="calButton">(</button><button class="calButton">4</button><button class="calButton">5</button><button class="calButton">6</button><button class="calButton">)</button><button class="calButton">7</button><button class="calButton">8</button><button class="calButton">9</button><button class="calButton">.</button><button class="calButton">0</button><button class="calButton">del</button><button class="calButton">+</button><button class="calButton">-</button><button class="calButton" id="enter">Enter</button><button class="calButton">*</button><button class="calButton">/</button>
         </div></div>
         <div id="tooDo"><h1>Too do List</h1>
-            <section class="todo">
-                <button class="checkbox"></button>
-                <form>
-                    <input type="text" placeholder="New item..">
-                </form><p>New Item...</p></section>
+            <section id="newTodo">
+                <form id="newItemForm">
+                    <input type="text" placeholder="New item.." id="itemField">
+                    <input type="submit" id="newItem" value="Add">
+                </form>
+            </section>
         
         </div>
         <div id="cal"><h1>Calandar</h1>
@@ -40,12 +43,12 @@
             </div>
         </div>
         <div id="clock"><h1>Clock</h1><form><output >##:##:##</output></form></div>
-        <div id="flexCalcCont"><h1>Flexbox Calculator</h1>
+        <div id="flexCalcCont">
+            <h1>Flexbox Calculator</h1>
             <div id="flexCalc">
                 <form id="flexForm"><output>####</output></form>
             <button class="calFlexButton">1</button><button class="calFlexButton">2</button><button class="calFlexButton">3</button><button class="calFlexButton">(</button><button class="calFlexButton">4</button><button class="calFlexButton">5</button><button class="calFlexButton">6</button><button class="calFlexButton">)</button><button class="calFlexButton">7</button><button class="calFlexButton">8</button><button class="calFlexButton">9</button><button class="calFlexButton">.</button><button class="calFlexButton">0</button><button class="calFlexButton">del</button><button class="calFlexButton">+</button><button class="calFlexButton">-</button><button class="calFlexButton" id="flexEnter">Enter</button><button class="calFlexButton">*</button><button class="calFlexButton">/</button>
-            </div>
-
+        </div>
         </div>
     </main>
     <script src="../scripts/jquery-3.3.1.js"></script>
