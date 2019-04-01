@@ -141,7 +141,7 @@
     width: 7em
 }
 /*#endregion flex calc*/
-    .todo{
+    #newTodo{
         display: flex;
         font-size: 25px;
         border: 2px black solid;
@@ -153,11 +153,23 @@
         padding-top: 5%;
         background-color: white;
     }
-    .todo>p{
-        margin-top: -5px;;
+    .oldTodo{
+        display: flex;
+        font-size: 25px;
+        border: 2px black solid;
+        text-align: left;
+        height: 40px;
+        margin-bottom: 5%;
+        margin-top: 5%;
+        font-weight: bold; 
+        padding-top: 5%;
+        background-color: white;
+    }
+    .oldTodo>p{
+        margin-top: -5px;
         margin-bottom: 15px;
     }
-    .todo>button{
+    .oldTodo>button{
         margin-right: 10px;
     }
     .checkbox{
