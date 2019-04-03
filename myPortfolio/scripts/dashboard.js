@@ -3,6 +3,7 @@ $(document).ready(function(){
 // set welcome to front of page on load
     display('welcome', 'welBtn');
 
+
 let $todo = $('#tooDo') // $todo set to todo list container
 let $newTodo = $('#newItemForm');   //$newTodo set to item creation form
 
@@ -15,6 +16,7 @@ $newTodo.on('submit', function(e){
     $('input[type="text"]').val(''); // clear the user input from the item creation field
 });
 
+
 //on click event. When checkbox is clicked delete todo item
 $todo.on('click', 'button', function(){
    // point to parent of the checkbox
@@ -25,16 +27,30 @@ $todo.on('click', 'button', function(){
 })
 
 var current = 0;
-        var curBtn = 0;
-            function display(dis, btn){
-            if(current != dis){
-                document.getElementById(dis).style.zIndex="1";
-            document.getElementById(btn).style.color= "yellow"
-            if(current != 0) {document.getElementById(current).style.zIndex="-1";}
-            if(curBtn != 0) {document.getElementById(curBtn).style.color="black";}
-            current = dis; 
-            curBtn = btn;
-             }
+var loc = document.getElementById("displayLocation");
+var loc2 = $( "#displayLocation" );
+var curBtn = 0;
+function display(dis, btn){
+    if(current != dis){
+        document.getElementById(dis).style.zIndex="1";
+    document.getElementById(btn).style.color= "yellow"
+    if(current != 0) {document.getElementById(current).style.zIndex="-1";}
+    if(curBtn != 0) {document.getElementById(curBtn).style.color="black";}
+    current = dis; 
+    curBtn = btn;
+        }
+    }
+    function getLocation(){
+        if(navigator.geolocation)
+            {
+                navigator.geolocation.getCurrentPosition(displayLocation);
+            }else{
+                loc.innerHTML = "Unable to retreive Location. Please Enable Tracking to use this function."
             }
+    }
+    function displayLocation(position){
+        
+        loc.innerHTML = "Longitude: " + position.coords.longitude + "<br> Latitude: " + position.coords.latitude;
+    }
 
         

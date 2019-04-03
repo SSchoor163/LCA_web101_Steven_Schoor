@@ -12,7 +12,13 @@
 <!-- <body onload="display('welcome', 'welBtn')"> -->
     <header>
         <nav>
-            <a onclick="display('welcome', 'welBtn')" id="welBtn">Welcome</a> <a onclick="display('gridCalc', 'grdBtn')" id="grdBtn">Grid Calculator</a><a onclick="display('flexCalcCont', 'flxBtn')" id="flxBtn">Flex Calculator</a><a onclick="display('clock', 'tmBtn')" id="tmBtn">Time</a><a onclick="display('tooDo', 'tdBtn')" id="tdBtn">Too Do List</a><a onclick="display('cal', 'calBtn')" id="calBtn">Calandar</a>
+            <a onclick="display('welcome', 'welBtn')" id="welBtn">Welcome</a> 
+            <a onclick="display('gridCalc', 'grdBtn')" id="grdBtn">Grid Calculator</a>
+            <a onclick="display('flexCalcCont', 'flxBtn')" id="flxBtn">Flex Calculator</a>
+            <a onclick="display('clock', 'tmBtn')" id="tmBtn">Time</a>
+            <a onclick="display('tooDo', 'tdBtn')" id="tdBtn">Too Do List</a>
+            <a onclick="display('cal', 'calBtn')" id="calBtn">Calandar</a>
+            <a onclick="display('location', 'locBtn'); getLocation();" id="locBtn">Location</a>
         </nav>
     </header>
         <main >
@@ -48,7 +54,12 @@
             <div id="flexCalc">
                 <form id="flexForm"><output>####</output></form>
             <button class="calFlexButton">1</button><button class="calFlexButton">2</button><button class="calFlexButton">3</button><button class="calFlexButton">(</button><button class="calFlexButton">4</button><button class="calFlexButton">5</button><button class="calFlexButton">6</button><button class="calFlexButton">)</button><button class="calFlexButton">7</button><button class="calFlexButton">8</button><button class="calFlexButton">9</button><button class="calFlexButton">.</button><button class="calFlexButton">0</button><button class="calFlexButton">del</button><button class="calFlexButton">+</button><button class="calFlexButton">-</button><button class="calFlexButton" id="flexEnter">Enter</button><button class="calFlexButton">*</button><button class="calFlexButton">/</button>
+            </div>
         </div>
+        <div id="location">
+            <h1>Location</h1>
+            <section id="displayLocation"></section>
+            <section id="map"></section>
         </div>
     </main>
     <script src="../scripts/jquery-3.3.1.js"></script>
