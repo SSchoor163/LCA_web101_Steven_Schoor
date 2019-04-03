@@ -24,15 +24,15 @@
         <main >
          
 
-        <div id="welcome"><h1>Welcome Micheal Jones!</h1>
+        <div id="welcome" class="background"><h1>Welcome Micheal Jones!</h1>
             <img src="../images/580b57fcd9996e24bc43c4c4.png" alt="thumbs up emoji">
             <h2>How can I help you today?</h2>
         </div>
-        <div id="gridCalc" ><h1>Calculator</h1>
+        <div id="gridCalc" class="background"><h1>Calculator</h1>
             <div id="calculator"><form id="gridForm"><output>####</output></form>
             <button class="calButton">1</button><button class="calButton">2</button><button class="calButton">3</button><button class="calButton">(</button><button class="calButton">4</button><button class="calButton">5</button><button class="calButton">6</button><button class="calButton">)</button><button class="calButton">7</button><button class="calButton">8</button><button class="calButton">9</button><button class="calButton">.</button><button class="calButton">0</button><button class="calButton">del</button><button class="calButton">+</button><button class="calButton">-</button><button class="calButton" id="enter">Enter</button><button class="calButton">*</button><button class="calButton">/</button>
         </div></div>
-        <div id="tooDo"><h1>Too do List</h1>
+        <div id="tooDo" class="background"><h1>Too do List</h1>
             <section id="newTodo">
                 <form id="newItemForm">
                     <input type="text" placeholder="New item.." id="itemField">
@@ -41,28 +41,31 @@
             </section>
         
         </div>
-        <div id="cal"><h1>Calandar</h1>
+        <div id="cal" class="background"><h1>Calandar</h1>
             <div id="calandar">
                 <h2>February 2019</h2>
                 <h3>Monday</h3><h3>Tuesday</h3><h3>Wednesday</h3><h3>Thursday</h3><h3>Friday</h3><h3>Saturday</h3><h3>Sunday</h3>
                 <section class="day">1</section><section class="day">2</section><section class="day">3</section><section class="day">4</section><section class="day">5</section><section class="day">6</section><section class="day">7</section><section class="day">8</section><section class="day">9</section><section class="day">10</section><section class="day">11</section><section class="day">12</section><section class="day">13</section><section class="day">14</section><section class="day">15</section><section class="day">16</section><section class="day">17</section><section class="day">18</section><section class="day">19</section><section class="day">20</section><section class="day">21</section><section class="day">22</section><section class="day">23</section><section class="day">24</section><section class="day">25</section><section class="day">26</section><section class="day">27</section><section class="day">28</section>
             </div>
         </div>
-        <div id="clock"><h1>Clock</h1><form><output >##:##:##</output></form></div>
-        <div id="flexCalcCont">
+        <div id="clock" class="background"><h1>Clock</h1><form><output >##:##:##</output></form></div>
+        <div id="flexCalcCont" class="background"> 
             <h1>Flexbox Calculator</h1>
             <div id="flexCalc">
                 <form id="flexForm"><output>####</output></form>
             <button class="calFlexButton">1</button><button class="calFlexButton">2</button><button class="calFlexButton">3</button><button class="calFlexButton">(</button><button class="calFlexButton">4</button><button class="calFlexButton">5</button><button class="calFlexButton">6</button><button class="calFlexButton">)</button><button class="calFlexButton">7</button><button class="calFlexButton">8</button><button class="calFlexButton">9</button><button class="calFlexButton">.</button><button class="calFlexButton">0</button><button class="calFlexButton">del</button><button class="calFlexButton">+</button><button class="calFlexButton">-</button><button class="calFlexButton" id="flexEnter">Enter</button><button class="calFlexButton">*</button><button class="calFlexButton">/</button>
             </div>
         </div>
-        <div id="location">
+        <div id="location" class="background">
             <h1>Location</h1>
             <section id="displayLocation"></section>
             <section id="map"></section>
         </div>
     </main>
     <script src="../scripts/jquery-3.3.1.js"></script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBj8FPgBpbFND5fTiQNR5VIBbSRFAtw6Ws&callback=initMap">
+    </script>
     <script src="../scripts/dashboard.js "></script>
 </body>
 </html>
