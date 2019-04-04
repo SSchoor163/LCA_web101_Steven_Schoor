@@ -1,11 +1,26 @@
 //preload the website
 $(document).ready(function(){   
-// set welcome to front of page on load
-    display('welcome', 'welBtn');
 
-
+//variables
 let $todo = $('#tooDo') // $todo set to todo list container
 let $newTodo = $('#newItemForm');   //$newTodo set to item creation form
+let claculatorDisplay = $('output'); // point to calculator output screen
+let calculatorInput = 0; // stores calculator input
+
+//functions
+function calculatorPushToInput(){
+
+}
+function calculatorPushInputToDisplay(){
+
+}
+function calculatorEvaluateInput(){
+  
+}
+
+//statements
+
+display('welcome', 'welBtn'); // set welcome to front of page on load
 
 // on click event when submit button is pressed. Will take the user input and create  list item with the text and a checkbox below the item creation form
 $newTodo.on('submit', function(e){
