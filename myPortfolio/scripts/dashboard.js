@@ -39,6 +39,43 @@ $todo.on('click', 'button', function(){
     $this.remove(); //remove that parent
 });
 
+/*
+Bubble pop code
+When mouse is in game area, change to a needle Icon
+Bubbles rise at an increasing rate and at 30 seconds begin a zig-zag pattern
+Clicking a bubble removes the bubble and increases the players score by 1
+When bubble reaches the top of the game area, end game, display score, and ask if they would like to play again
+When play again button is pressed, reset game prompts
+Bubbles generated choose randomly from 7 different images
+Bubble spawn rate begins at 2 second intervals and decreases by .1 second every 10 seconds to a minimum of .1 seconds
+Bubbles start of taking 3 seconds to reach the top and decreases at a rate of .1 sec every 10 seconds to a minimum of .5 seconds
+Bubbles spawn 1 at a time and increase by 1 ev every 15 seconds
+bubbles need to spawn at random coordinates along the x axis at the bottom of the screen 
+*/
+let randomBubble;
+let bubbleCount = 0;
+let bubbleSpawn = "<img class='bubble' id='bubble_"+bubbleCount+"' src='bubble_"+randomBubble+"'>";
+let spawnAxis;
+let bubbleSpeed;
+let bubbleSpawnRate;
+let bubbleSpawnNumber;
+let bubblesPoped;
+function bubbleGame(){
+
+}
+function spawnBubble(){
+bubblecount++
+randomBubble = Math.floor(Math.random()*7);
+spawnAxis = Math.floor(Math.random()*350)+25;
+$('#bubble_'+bubbleCount).style.left = spawnAxis;
+$('#startZone').prepend(bubbleSpawn);
+}
+function clearBubbles(){
+
+}
+
+
+
 })
 
 var current = 0;
