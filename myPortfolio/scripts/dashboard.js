@@ -41,38 +41,102 @@ $todo.on('click', 'button', function(){
 
 /*
 Bubble pop code
-When mouse is in game area, change to a needle Icon
+When mouse is in game area, change to a needle IconX
 Bubbles rise at an increasing rate and at 30 seconds begin a zig-zag pattern
-Clicking a bubble removes the bubble and increases the players score by 1
-When bubble reaches the top of the game area, end game, display score, and ask if they would like to play again
-When play again button is pressed, reset game prompts
-Bubbles generated choose randomly from 7 different images
+Clicking a bubble removes the bubble and increases the players score by 1 X
+When bubble reaches the top of the game area, end game, display score, and ask if they would like to play againX
+When play again button is pressed, reset game promptsX
+Bubbles generated choose randomly from 7 different imagesX
 Bubble spawn rate begins at 2 second intervals and decreases by .1 second every 10 seconds to a minimum of .1 seconds
 Bubbles start of taking 3 seconds to reach the top and decreases at a rate of .1 sec every 10 seconds to a minimum of .5 seconds
 Bubbles spawn 1 at a time and increase by 1 ev every 15 seconds
-bubbles need to spawn at random coordinates along the x axis at the bottom of the screen 
+bubbles need to spawn at random coordinates along the x axis at the bottom of the screenX 
 */
-let randomBubble;
-let bubbleCount = 0;
-let bubbleSpawn = "<img class='bubble' id='bubble_"+bubbleCount+"' src='bubble_"+randomBubble+"'>";
-let spawnAxis;
-let bubbleSpeed;
+
+var bubbleCount = 0;
+var bubbleScore = 0;
+var totalSeconds = 0;
+var spawn;
+var time;
+var bubbleSpeed = 6000;
+var $bubbleSpeed;
 let bubbleSpawnRate;
 let bubbleSpawnNumber;
-let bubblesPoped;
-function bubbleGame(){
 
+
+function pad ( val ) { return val > 9 ? val : "0" + val; }
+
+
+$('#reset').click('#bubPopOuter', function(){
+  bubbleCount = 0;
+ bubbleScore = 0;
+ totalSeconds = 0;
+ spawn = null;
+ time = null;
+ bubbleSpeed = 6000;
+$bubbleSpeed = null;
+let bubbleSpawnRate;
+let bubbleSpawnNumber;
+$('#score').text("Player Score: 0"+bubbleScore);
+$("#seconds").text("00");
+$("#minutes").text("00");
+$('#start').removeClass("hideBtn");
+  $('#start').addClass("showBtn");
+  $('#reset').removeClass("showBtn");
+  $('#reset').addClass("hideBtn");
+  $('#message').text(" ");
+});
+
+$('#start').click('#bubPopOuter', function(e){
+  e.preventDefault();
+  $('#start').removeClass("showBtn");
+  $('#start').addClass("hideBtn");
+     time = setInterval( function(){
+        $("#seconds").html(pad(++totalSeconds%60));
+        $("#minutes").html(pad(parseInt(totalSeconds/60,10)));
+    }, 1000);
+  
+  spawn = setInterval(spawnBubble, 3000);
+  $bubbleSpeed = setInterval(function(){
+    bubbleSpeed = bubbleSpeed - 200;
+  }, 5000);  
 }
+  );
+
 function spawnBubble(){
-bubblecount++
-randomBubble = Math.floor(Math.random()*7);
-spawnAxis = Math.floor(Math.random()*350)+25;
-$('#bubble_'+bubbleCount).style.left = spawnAxis;
-$('#startZone').prepend(bubbleSpawn);
-}
-function clearBubbles(){
+bubbleCount++;
+let randomBubble = Math.floor(Math.random()*7)+1;
+let spawnAxis = Math.floor(Math.random()*250)+25+"px";
+let whichBubble = 'bubble_'+randomBubble+'.png';
+let thisBubble = 'bubble_'+bubbleCount;
+let bubbleSpawn = "<img class='bubble' id='"+thisBubble+"' src='../images/"+whichBubble+"'>";
+$('#spawnZone').before(bubbleSpawn);
+var $thisBubble = $('#bubble_'+bubbleCount);
+
+$thisBubble.css("left", spawnAxis);
+$thisBubble.css("transition", "all "+ bubbleSpeed + "ms linear");
+$thisBubble.animate({ top: "-=374px" });
+$thisBubble.toggle(bubbleSpeed, "linear", function(){
+  
+  clearInterval(spawn);
+  clearInterval(time);
+  $('.bubble').finish();
+  $('#message').text("You Scored: "+bubbleScore+"Would you like to play again?");
+  $('#reset').removeClass("hideBtn");
+  $('#reset').addClass("showBtn");
+})
+$thisBubble.on('click', $thisBubble, function(){
+
+  
+  $thisBubble.stop(true);
+  $thisBubble.remove(); 
+  bubbleScore++;
+  $('#score').text("Player Score: 0"+bubbleScore);
+})
+
 
 }
+
 
 
 
