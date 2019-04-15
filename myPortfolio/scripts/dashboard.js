@@ -19,7 +19,29 @@ function calculatorEvaluateInput(){
 }
 
 //statements
-
+$('.calButton').click('button', function(e){
+  e.preventDefault();
+  let text = this.value;
+  let reset = false;
+  if(calculatorInput == 0){
+    if (text == 'del' || text == 'enter'){
+      return;
+    }else{
+    calculatorInput = text;}
+  }else if(text == 'del')
+  {calculatorInput = calculatorInput.slice(0,-1);}
+    else if(text == "enter"){
+      calculatorInput = eval(calculatorInput);
+      reset = true;
+  }
+    else{  calculatorInput += text;}
+  $('#calcField').text(calculatorInput);
+  if(reset == true){
+    reset = false;
+    calculatorInput = "0";
+  }
+  
+});
 display('welcome', 'welBtn'); // set welcome to front of page on load
 
 // on click event when submit button is pressed. Will take the user input and create  list item with the text and a checkbox below the item creation form
@@ -39,8 +61,8 @@ $todo.on('click', 'button', function(){
     $this.remove(); //remove that parent
 });
 
-/*
-Bubble pop code
+/*#region bubble pop*/
+/*Bubble pop code
 When mouse is in game area, change to a needle IconX
 Bubbles rise at an increasing rate and at 30 seconds begin a zig-zag pattern
 Clicking a bubble removes the bubble and increases the players score by 1 X
@@ -133,7 +155,7 @@ $thisBubble.on('click', $thisBubble, function(){
   bubbleScore++;
   $('#score').text("Player Score: 0"+bubbleScore);
 })
-
+/*#endregion*/
 
 }
 

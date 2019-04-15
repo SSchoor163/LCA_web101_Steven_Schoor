@@ -1,0 +1,13 @@
+img{
+    height: 250px;
+    width: 350px;
+}
+div{
+    border: 2px black solid;
+    margin-top: 10px;
+}
+body{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
