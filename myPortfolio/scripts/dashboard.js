@@ -22,17 +22,35 @@ function calculatorEvaluateInput(){
 $('.calButton').click('button', function(e){
   e.preventDefault();
   let text = this.value;
+  let lastText = text;
   let reset = false;
   if(calculatorInput == 0){
     if (text == 'del' || text == 'enter'){
       return;
-    }else{
+    }if(text == "+" || text == "-" || text == "*" || text == "/"){
+      return;
+    }
+    else{
     calculatorInput = text;}
-  }else if(text == 'del')
+  }else if(text == 'neg'){
+    if ((calculatorInput.slice(-1) =='+' || calculatorInput.slice(-1) =='-' || calculatorInput.slice(-1) =='*' || calculatorInput.slice(-1) =='/' ){
+      return;
+    }else{
+    
+     calculatorInput.splice()
+    }
+    }
+  else if(text == 'del')
   {calculatorInput = calculatorInput.slice(0,-1);}
     else if(text == "enter"){
       calculatorInput = eval(calculatorInput);
       reset = true;
+  }
+  else if (text == "+" || text == "-" || text == "*" || text == "/"){
+    if(calculatorInput.slice(-1) =='+' || calculatorInput.slice(-1) =='-' || calculatorInput.slice(-1) =='*' || calculatorInput.slice(-1) =='/'){
+        return;
+    }
+    else {calculatorInput += text;}
   }
     else{  calculatorInput += text;}
   $('#calcField').text(calculatorInput);

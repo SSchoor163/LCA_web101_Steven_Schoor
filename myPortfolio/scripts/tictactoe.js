@@ -21,7 +21,6 @@ var player2 = 'false';
 var player2Marker;
 var victory;
 
-
 function setBoard(){
    turn = 0;
    player1 = 'true';
@@ -98,6 +97,13 @@ function currentGrid(choice){
         }
     }
 }
+function displayVictor(){
+    if(player1=='true'){
+        display('You win Player 1. Would you like to play again?');
+    }else{
+        display('You win Player 2. Would you like to play again?');
+    }
+}
 
 function victoryConditions(){
     if (turn == 9){
@@ -105,34 +111,43 @@ function victoryConditions(){
         return true;
     }
     if(player1 == 'true'){
-        if(     (space[1]==player1Marker&&space[2]==player1Marker&&space[3]==player1Marker) ||
-                (space[1]==player1Marker&&space[4]==player1Marker&&space[7]==player1Marker) || 
-                (space[1]==player1Marker&&space[5]==player1Marker&&space[9]==player1Marker) || 
-                (space[2]==player1Marker&&space[5]==player1Marker&&space[8]==player1Marker) || 
-                (space[3]==player1Marker&&space[6]==player1Marker&&space[9]==player1Marker) ||
-                (space[3]==player1Marker&&space[5]==player1Marker&&space[7]==player1Marker) ||
-                (space[4]==player1Marker&&space[5]==player1Marker&&space[6]==player1Marker) ||
-                (space[7]==player1Marker&&space[8]==player1Marker&&space[9]==player1Marker)) 
-    {
-        display('You win Player 1. Would you like to play again?');
-        return true;
-    }
-}
-    else{
-        if(     (space[1]==player2Marker&&space[2]==player2Marker&&space[3]==player2Marker) ||
-            (space[1]==player2Marker&&space[4]==player2Marker&&space[7]==player2Marker) || 
-            (space[1]==player2Marker&&space[5]==player2Marker&&space[9]==player2Marker) || 
-            (space[2]==player2Marker&&space[5]==player2Marker&&space[8]==player2Marker) || 
-            (space[3]==player2Marker&&space[6]==player2Marker&&space[9]==player2Marker) ||
-            (space[3]==player2Marker&&space[5]==player2Marker&&space[7]==player2Marker) ||
-            (space[4]==player2Marker&&space[5]==player2Marker&&space[6]==player2Marker) ||
-            (space[7]==player2Marker&&space[8]==player2Marker&&space[9]==player2Marker))
-            {  
-            display('You win Player 2. Would you like to play again?');
-            return true;
-            }
-        
+        // if(     (space[1]==player1Marker&&space[2]==player1Marker&&space[3]==player1Marker) ||
+        //         (space[1]==player1Marker&&space[4]==player1Marker&&space[7]==player1Marker) || 
+        //         (space[1]==player1Marker&&space[5]==player1Marker&&space[9]==player1Marker) || 
+        //         (space[2]==player1Marker&&space[5]==player1Marker&&space[8]==player1Marker) || 
+        //         (space[3]==player1Marker&&space[6]==player1Marker&&space[9]==player1Marker) ||
+        //         (space[3]==player1Marker&&space[5]==player1Marker&&space[7]==player1Marker) ||
+        //         (space[4]==player1Marker&&space[5]==player1Marker&&space[6]==player1Marker) ||
+        //         (space[7]==player1Marker&&space[8]==player1Marker&&space[9]==player1Marker)) 
+        for( var x = 1; x< 8; x = x+3){
+            if(space[x] == space[x+1]  
+                && space[x+1] == space[x+2]
+                && space[x] != ""){display('You win Player 1. Would you like to play again?');
+                return true;}
         }
+        for(var x = 1; x< 4; x++){
+            if(space[x] == space[x+3]  
+                && space[x+3] == space[x+6]
+                && space[x] != ""){display('You win Player 1. Would you like to play again?');
+                return true;}}
+        if(space[1] == space[5]  
+            && space[5] == space[9]
+            && space[1] != "" ){
+                display('You win Player 1. Would you like to play again?');
+                return true; 
+            }
+            if(space[3] == space[5]  
+                && space[5] == space[7]
+                && space[3] != "" ){
+                    displayVictor();
+                    return true; 
+                }   
+        
+    }
+
+    
+        
+        
     turn += 1;
 }
 
