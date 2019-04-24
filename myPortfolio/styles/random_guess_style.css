@@ -1,0 +1,18 @@
+body{
+    background-color: beige;
+    
+   
+
+}
+div{
+   text-align: center;
+   width: 100%;
+    display: inline-block;
+}   
+p{
+    width: 300px;
+    display: inline-block
+}
+form{
+    display: inline-block;
+}

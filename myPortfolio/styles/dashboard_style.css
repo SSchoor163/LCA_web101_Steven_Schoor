@@ -76,17 +76,17 @@
     /*#endregion welcome*/
     /*#region grid calc*/    
     #calculator{
-        width: 250px;
+        width: 310px;
         height: 360px;
         display: inline-grid;
-        grid-template-columns: 60px 60px 60px 60px;
-        grid-auto-rows: 60px 60px 60px 60px 60px; 
+        grid-template-columns: 60px 60px 60px 60px 60px;
+        grid-auto-rows: 60px 60px 60px 60px 60px 60px; 
         border: 3px black solid;
         padding-top: 10px;
         background-color: silver       
     }
     #gridForm{
-        grid-column: 1/ span 4;
+        grid-column: 1/ span 5;
         background-color: gray;
         font-size: 35px;
         text-align: center;
@@ -404,9 +404,9 @@
         min-height: 900px;
     }
     #calculator{
-        width: 500px;
+        width: 625px;
         height: 720px;
-        grid-template-columns: 125px 125px 125px 125px;
+        grid-template-columns: 125px 125px 125px 125px 125px;
         grid-template-rows: 120px 120px 120px 120px 120px 120px; 
         margin-right: 5%;    
     }
