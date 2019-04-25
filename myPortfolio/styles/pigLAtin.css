@@ -1,0 +1,12 @@
+body{
+    display: inline-block;
+    text-align: center
+}
+p{
+    display: inline-block;
+    width: 150px;
+}
+output{
+    width: 150px;
+    height: 150px;
+}
