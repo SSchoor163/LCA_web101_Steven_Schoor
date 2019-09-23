@@ -1,0 +1,21 @@
+#inner{
+    display: grid;
+    grid-template-rows: 75px 50px 50px 50px 50px 50px;
+    grid-template-columns: 50px 50px 50px 50px;
+    margin-left: 10px;
+    margin-top: 10px;
+    height: 375px;
+    width: 200px;
+}
+fieldset{
+    grid-column-start: 1;
+    grid-column-end: 5;
+}
+#outer{
+    height: 345px;
+    width: 220px;
+    border: 1px solid black;
+}
+button{
+    border-radius: 10px
+}

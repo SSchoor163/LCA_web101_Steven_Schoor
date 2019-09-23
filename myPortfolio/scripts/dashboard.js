@@ -33,7 +33,7 @@ $('.calButton').click('button', function(e){
     else{
     calculatorInput = text;}
   }else if(text == 'neg'){
-    if ((calculatorInput.slice(-1) =='+' || calculatorInput.slice(-1) =='-' || calculatorInput.slice(-1) =='*' || calculatorInput.slice(-1) =='/' ){
+    if (calculatorInput.slice(-1) =='+' || calculatorInput.slice(-1) =='-' || calculatorInput.slice(-1) =='*' || calculatorInput.slice(-1) =='/' ){
       return;
     }else{
     
