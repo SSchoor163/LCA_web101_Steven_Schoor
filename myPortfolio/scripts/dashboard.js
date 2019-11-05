@@ -39,7 +39,7 @@ $('.calButton').click('button', function(e){
     
      calculatorInput.splice()
     }
-    }
+    
   else if(text == 'del')
   {calculatorInput = calculatorInput.slice(0,-1);}
     else if(text == "enter"){
